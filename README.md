@@ -7,5 +7,5 @@ Il en va de même pour les aiguille a tricotter ainsi que pour les câbles (esse
 
 Ce projet a pour but d'évoluer en fonction de l'évolution des besoins du client. 
 
-La partie front-end a été développée par nicolas-letiec.
+Le web designe ainsi que la partie front-end a été développée par nicolas-letiec.
 La partie back-end a été développée par moi-même. 
