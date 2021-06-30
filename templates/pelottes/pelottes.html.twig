@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pelotes{% endblock %}
+
+{% block body %}
+<main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+ <!--Conteneur des cards-->
+    <section class="glass">
+        <a href="{{path("ajoutPelote")}}" id="add-item">
+            <div class="add-item">
+                <div class="cross"></div>
+            </div>
+        </a>   
+        
+    <!--cards-->
+    <h1>Liste des pelotes</h1>
+        {% for pelote in pelotes %} 
+        <div class="card-pelote">            
+            <a href="{{path("pelottes_detail", {"id" : pelote.id})}}">
+                <div class="card_image">
+                    <img src="{{asset('images/'~ pelote.nomImage)}}" alt="pelotte">
+                </div>
+                <h5>{{pelote.nom}}</h5>
+                <ul>
+                    <li> <span>Quantité:</span> {{pelote.quantite}}</li>
+                    <li><span>Longeure:</span> {{pelote.longeure}}</li>
+                    <li><span>N° d'aiguille:</span>{{pelote.tailleAiguille}}</li>
+                </ul>
+            </a>    
+        </div>
+        {% endfor %}
+    </section>
+</main>
+{% endblock %}

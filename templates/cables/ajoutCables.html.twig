@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau cable{% endblock %}
+
+{% block body %}
+<main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+<!--Conteneur des cards-->
+    <!--<form action="" class="form-pelote">-->
+        {{form_start(form)}}
+        <a href="{{path("cables")}}" id="cancel">
+            <div class="cancel">
+                <div class="cross-cancel"></div>
+            </div>
+        </a> 
+  
+            <ul>
+                <li class="input">{{form_row(form.longueure)}}</li>
+                <li class="input">{{form_row(form.quantite)}}</li>
+                <li class="input">{{form_row(form.prix)}}</li>                
+            </ul>
+        <button type="submit" class="btn-submit">Valider</button>
+    {{form_end(form)}}
+</main>
+{% endblock %}

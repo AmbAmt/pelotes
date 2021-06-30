@@ -2,12 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
+        <title>{% block title %}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-
         {% block javascripts %}{% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+        <body>
+            <!-- navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{path('pelottes')}}">Pelotes</a></li>
+                <li><a href="{{path('aiguilles')}}">Aiguilles</a></li>
+                <li><a href="{{path('cables')}}">Câbles</a></li>
+            </ul>
+        </nav>
+        {% block body %}
+        <h1>{% block Titre1 %}{% endblock %}</h1>
+        {% endblock %}
     </body>
 </html>

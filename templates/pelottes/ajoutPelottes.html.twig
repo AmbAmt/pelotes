@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle pelotte{% endblock %}
+
+{% block body %}
+<main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+<!--Conteneur des cards-->
+    <!--<form action="" class="form-pelote">-->
+        {{form_start(form)}}
+        <a href="{{path("pelottes")}}" id="cancel">
+            <div class="cancel">
+                <div class="cross-cancel"></div>
+            </div>
+        </a> 
+  
+            <ul>
+                <li class="input">{{form_row(form.nom)}}</li>
+                <li class="input">{{form_row(form.imageFile)}}</li>
+                <li class="input">{{form_row(form.marque)}}</li>
+                <li class="input">{{form_row(form.couleurNom)}}</li>
+                <li class="input">{{form_row(form.couleurNumero)}}</li>
+                <li class="input">{{form_row(form.matiere)}}</li>
+                <li class="input">{{form_row(form.grammage)}}</li>
+                <li class="input">{{form_row(form.longeure)}}</li>
+                <li class="input">{{form_row(form.tailleAiguille)}}</li>
+                <li class="input">{{form_row(form.echantillon)}}</li>
+                <li class="input">{{form_row(form.quantite)}}</li>
+                <li class="input">{{form_row(form.prix)}}</li>
+                <li cols="30" rows="10" class="note">{{form_row(form.commentaire)}}</li>
+            </ul>
+        <button type="submit" class="btn-submit">Valider</button>
+    {{form_end(form)}}
+</main>
+{% endblock %}

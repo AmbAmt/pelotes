@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail pelotte{% endblock %}
+
+{% block body %}
+  <!--contenu-->
+  <main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+<!--Container-->
+    <section class="item-info">   
+        <h2>{{pelotte.nom}}</h2>
+        <img src="{{asset('images/'~ pelotte.nomImage)}}" alt="image de la pelote">
+        <ul>
+            <li>Marque: {{pelotte.marque.nom}}</li>
+            <li>Matière: {{pelotte.matiere}}</li>
+            <li>Couleur: {{pelotte.couleurNom}}</li>
+            <li>N° couleur: {{pelotte.couleurNumero}}</li>
+            <li>Taille aiguilles: {{pelotte.tailleAiguille}}</li>
+            <li>Longeure: {{pelotte.longeure}}</li>
+            <li>Grammage: {{pelotte.grammage}}</li>
+            <li>Echantillon: {{pelotte.echantillon}}</li>
+            <li>Quantité: {{pelotte.quantite}}</li>
+            <li>Prix: {{pelotte.prix}}€</li>
+        </ul>
+        <p class="commentaire">{{pelotte.commentaire}}
+        </p>
+        <div class="button button_detail">
+            <a href="{{path('modifPelote', {'id' : pelotte.id })}}" class="modify">Modifier</a>
+            <a href="{{path('supprimerPelote', {'id' : pelotte.id })}}" class="delete">Supprimer</a>
+        </div>
+    </section>
+</main>
+{% endblock %}

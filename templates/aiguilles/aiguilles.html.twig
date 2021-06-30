@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Aiguilles{% endblock %}
+
+{% block body %}
+<main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+<!--Conteneur des cards-->
+    <section class="glass">
+        <a href="{{path("ajoutAiguille")}}" id="add-item">
+            <div class="add-item">
+                <div class="cross"></div>
+            </div>
+        </a>    
+<!--cards-->
+        <h1>Liste des aiguilles</h1>
+        {% for aiguille in aiguilles %}
+        <div class="card-aiguille">
+            <h5>Aiguille</h5>
+            <ul>
+                <li><span>Taille:</span> {{aiguille.taille}}</li>
+                <li><span>Type:</span> {{aiguille.typeAiguilles.nom}}</li>
+                <li><span>Marque:</span> {{aiguille.marque.nom}}</li>
+                <li> <span>Quantité:</span> {{aiguille.quantite}}</li>
+                <li><span>Prix:</span> {{aiguille.prix}}€</li>
+            </ul>
+            <div class="button-card">
+                <a href="{{path('modifAiguilles', {'id' : aiguille.id })}}" class="modify-card">Modifier</a>
+                <a href="{{path('supprimerAiguille', {'id' : aiguille.id })}}" class="delete-card">Supprimer</a>
+            </div>   
+        </div>
+        {% endfor %}
+    </section>
+</main>
+{% endblock %}

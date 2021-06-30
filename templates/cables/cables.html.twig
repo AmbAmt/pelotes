@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Câbles{% endblock %}
+
+{% block body %}
+<main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+<!--Conteneur des cards-->
+    <section class="glass">
+        <a href="{{path('ajoutCables')}}" id="add-item">
+            <div class="add-item">
+                <div class="cross"></div>
+            </div>
+        </a>    
+<!--cards-->
+        <h1>Liste des câbles</h1>
+            {% for cable in cables %}
+            <div class="card-aiguille">
+                <h5>Câble</h5>
+                <ul>
+                    <li><span>Longueur:</span> {{cable.longueure}}</li>
+                    <li> <span>Quantité:</span> {{cable.quantite}}</li>
+                    <li><span>Prix:</span> {{cable.prix}}€</li>
+                </ul>
+                <div class="button-card">
+                    <a href="{{path('modifCables', {'id' : cable.id })}}" class="modify-card">Modifier</a>
+                    <a href="{{path('supprimerCables', {'id' : cable.id })}}" class="delete-card">Supprimer</a>
+                </div>   
+            </div>
+            {% endfor %}
+    </section>
+</main>
+{% endblock %}
+
